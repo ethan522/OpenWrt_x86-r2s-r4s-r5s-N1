@@ -5,9 +5,9 @@ SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 
 rm -rf package/boot package/feeds/kiddin9/accel-ppp
 
-rm -rf target/linux/generic/!(*-5.15) target/linux/rockchip
+rm -rf target/linux/generic/!(*-5.15) target/linux/rockchip package/kernel/linux/modules
 
-git_clone_path istoreos-22.03 https://github.com/istoreos/istoreos package/boot target/linux/rockchip
+git_clone_path istoreos-22.03 https://github.com/istoreos/istoreos package/boot target/linux/rockchip package/kernel/linux/modules
 
 git_clone_path istoreos-22.03 https://github.com/istoreos/istoreos mv target/linux/generic
 
