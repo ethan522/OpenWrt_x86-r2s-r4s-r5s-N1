@@ -3,19 +3,15 @@
 shopt -s extglob
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 
-bash $SHELL_FOLDER/../common/kernel_6.1.sh
+rm -rf package/boot package/feeds/kiddin9/accel-ppp
 
-rm -rf package/boot package/feeds/kiddin9/accel-ppp package/kernel/ath10k-ct
+rm -rf target/linux/generic/!(*-5.15) target/linux/rockchip
 
-rm -rf target/linux/rockchip
+git_clone_path master https://github.com/istoreos/istoreos package/boot target/linux/rockchip
 
-git_clone_path master https://github.com/coolsnowwolf/lede package/boot target/linux/rockchip
-rm -rf target/linux/rockchip/patches-6.1/013-v6.11-PCI-dw-*
-#git_clone_path master https://github.com/coolsnowwolf/lede mv target/linux/generic
+git_clone_path master https://github.com/coolsnowwolf/lede mv target/linux/generic
 
-wget -N https://github.com/istoreos/istoreos/raw/istoreos-22.03/target/linux/rockchip/patches-5.10/304-r2s-pwm-fan.patch -P target/linux/rockchip/patches-6.1/
-
-#wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-6.1 -P include/
+wget -N https://github.com/istoreos/istoreos/raw/istoreos-22.03/include/kernel-5.10 -P include/
 
 sed -i "/KernelPackage,ptp/d" package/kernel/linux/modules/other.mk
 
@@ -32,4 +28,4 @@ cp -Rf $SHELL_FOLDER/diy/* ./
 
 echo '
 CONFIG_SENSORS_PWM_FAN=y
-' >> ./target/linux/rockchip/rk35xx/config-6.1
+' >> ./target/linux/rockchip/rk35xx/config-5.10
