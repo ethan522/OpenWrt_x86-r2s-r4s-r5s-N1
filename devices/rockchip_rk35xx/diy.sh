@@ -7,9 +7,9 @@ rm -rf package/boot package/feeds/kiddin9/accel-ppp
 
 rm -rf target/linux/generic/!(*-5.15) target/linux/rockchip
 
-git_clone_path master https://github.com/istoreos/istoreos package/boot target/linux/rockchip
+git_clone_path istoreos-22.03 https://github.com/istoreos/istoreos package/boot target/linux/rockchip
 
-git_clone_path master https://github.com/coolsnowwolf/lede mv target/linux/generic
+git_clone_path istoreos-22.03 https://github.com/istoreos/istoreos mv target/linux/generic
 
 wget -N https://github.com/istoreos/istoreos/raw/istoreos-22.03/include/kernel-5.10 -P include/
 
