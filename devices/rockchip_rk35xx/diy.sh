@@ -3,7 +3,7 @@
 shopt -s extglob
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 
-rm -rf package/boot package/feeds/kiddin9/accel-ppp
+rm -rf package/boot package/feeds/kiddin9/accel-ppp package/devel/kselftests-bpf
 
 rm -rf target/linux/generic/!(*-5.15) target/linux/rockchip package/kernel/linux/modules
 
@@ -20,7 +20,7 @@ mv -f tmp/r8125 feeds/kiddin9/
 sed -i -e 's,kmod-r8168,kmod-r8169,g' target/linux/rockchip/image/rk35xx.mk
 sed -i -e 's,wpad-openssl,wpad-basic-mbedtls,g' target/linux/rockchip/image/rk35xx.mk
 
-wget -N https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/kernel/linux/modules/video.mk -P package/kernel/linux/modules/
+wget -N https://github.com/openwrt/openwrt/raw/openwrt-23.05/package/kernel/linux/modules/video.mk -P package/kernel/linux/modules/
 
 wget -N https://github.com/openwrt/openwrt/raw/openwrt-23.05/package/kernel/linux/modules/netfilter.mk -P package/kernel/linux/modules/
 
