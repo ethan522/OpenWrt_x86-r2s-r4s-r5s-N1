@@ -22,6 +22,8 @@ sed -i -e 's,wpad-openssl,wpad-basic-mbedtls,g' target/linux/rockchip/image/rk35
 
 wget -N https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/kernel/linux/modules/video.mk -P package/kernel/linux/modules/
 
+wget -N https://github.com/openwrt/openwrt/raw/openwrt-23.05/package/kernel/linux/modules/netfilter.mk -P package/kernel/linux/modules/
+
 sed -i 's/DEFAULT_PACKAGES +=/DEFAULT_PACKAGES += fdisk lsblk kmod-drm-rockchip/' target/linux/rockchip/Makefile
 
 cp -Rf $SHELL_FOLDER/diy/* ./
