@@ -22,9 +22,8 @@ sed -i -e 's,wpad-openssl,wpad-basic-mbedtls,g' target/linux/rockchip/image/rk35
 
 wget -N https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/kernel/linux/modules/video.mk -P package/kernel/linux/modules/
 
-wget -N https://github.com/openwrt/openwrt/raw/openwrt-23.05/package/kernel/linux/modules/netfilter.mk -P package/kernel/linux/modules/
-
 wget -N https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch -P target/linux/generic/hack-5.10/
+wget -N https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/generic/pending-5.10/613-netfilter_optional_tcp_window_check.patch -P target/linux/generic/pending-5.10/
 
 sed -i 's/DEFAULT_PACKAGES +=/DEFAULT_PACKAGES += fdisk lsblk kmod-drm-rockchip/' target/linux/rockchip/Makefile
 
