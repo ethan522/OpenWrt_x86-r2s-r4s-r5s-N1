@@ -13,7 +13,7 @@ git_clone_path istoreos-22.03 https://github.com/istoreos/istoreos mv target/lin
 
 wget -N https://github.com/istoreos/istoreos/raw/istoreos-22.03/include/kernel-5.10 -P include/
 
-cp -rf target/linux/rockchip/rk35xx/files target/linux/rockchip/
+cp -rf target/linux/rockchip/rk35xx/files/include target/linux/rockchip/files/
 
 sed -i "/KernelPackage,ptp/d" package/kernel/linux/modules/other.mk
 
