@@ -13,8 +13,7 @@ git_clone_path master https://github.com/coolsnowwolf/lede package/boot target/l
 git_clone_path master https://github.com/coolsnowwolf/lede mv target/linux/generic
 
 wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-5.10 -P include/
-
-cp -rf target/linux/rockchip/rk35xx/files/include target/linux/rockchip/files/
+wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-6.1 -P include/
 
 sed -i "/KernelPackage,ptp/d" package/kernel/linux/modules/other.mk
 
