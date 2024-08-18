@@ -14,6 +14,7 @@ git_clone_path master https://github.com/coolsnowwolf/lede mv target/linux/gener
 
 wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-5.10 -P include/
 wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-6.1 -P include/
+wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-6.6 -P include/
 
 sed -i "/KernelPackage,ptp/d" package/kernel/linux/modules/other.mk
 
