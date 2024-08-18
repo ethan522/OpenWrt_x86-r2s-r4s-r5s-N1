@@ -10,7 +10,7 @@
 +  DEVICE_MODEL := H28K
 +  SUPPORTED_DEVICES += hlink,h28k
 +  DEVICE_DTS := rk3528-h28k
-+  DEVICE_PACKAGES := kmod-r8168 kmod-r8125 kmod-thermal
++  DEVICE_PACKAGES := kmod-r8169 kmod-r8125 kmod-thermal
 +endef
 +TARGET_DEVICES += hlink_h28k
 +
