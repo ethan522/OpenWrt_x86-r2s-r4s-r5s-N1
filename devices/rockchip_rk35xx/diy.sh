@@ -16,6 +16,8 @@ wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-5.10 -P i
 wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-6.1 -P include/
 wget -N https://github.com/coolsnowwolf/lede/raw/master/include/kernel-6.6 -P include/
 
+rm -rf target/linux/rockchip/files-5.10/drivers/gpu
+
 sed -i "/KernelPackage,ptp/d" package/kernel/linux/modules/other.mk
 
 mv -f tmp/r8125 feeds/kiddin9/
