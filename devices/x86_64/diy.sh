@@ -18,6 +18,8 @@ mv -f tmp/r81* feeds/kiddin9/
 
 sed -i 's/256/1024/g' target/linux/x86/image/Makefile
 
+sed -i 's/CONFIG_XFRM_ALGO=m/CONFIG_XFRM_ALGO=y/' ./target/linux/x86/config-5.15
+
 echo '
 CONFIG_ACPI=y
 CONFIG_X86_ACPI_CPUFREQ=y
